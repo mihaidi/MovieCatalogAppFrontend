@@ -1,0 +1,46 @@
+.leftSide{
+    float: left;
+    /* border-color: green;
+    border-style: solid; */
+}
+
+.center{
+    float:center;
+    /* border-color: black;
+    border-style: solid; */
+    display:flex;
+}
+
+.centerContent{
+    float: center;
+    margin-top: 25px;
+    margin-right: 399px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    /* border-color: black;
+    border-style: solid;
+     */
+}
+
+.title{
+    text-align: left;
+    font-family: 'Times New Roman';
+    font-size: 22px;
+}
+
+.movieDetails{
+    float: right;
+    /* border-color: black;
+    border-style: solid; */
+    display: block
+}
+
+.ICenter{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+*:focus {
+    outline: 0;
+}

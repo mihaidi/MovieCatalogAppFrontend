@@ -1,0 +1,32 @@
+<div class="leftSide">
+    <div *ngFor="let gen of allGenres">
+        <input type="checkbox" name="{{gen.name}}" id="{{gen.name}}"
+            (change)="onSelectGenre(gen.id,$event.target.checked)">
+
+        <label for="{{gen.name}}">
+            {{gen.name}}
+        </label>
+    </div>
+</div>
+
+
+
+<div class="center">
+
+    <ngb-carousel *ngIf="filteredMovies" [showNavigationArrows]="showNavigationArrows" class="ICenter col-md-6">
+        <ng-template ngbSlide *ngFor="let image of filteredMovies" class="centerContent">
+            <p class="title">{{image.title}}</p>
+
+            <img class="ICenter" src="https://image.tmdb.org/t/p/w342/{{image.poster_path}}"
+                style="max-height:500px;max-width: 500px; margin:0 auto;">
+
+            <div class="movieDetails">
+                <p>Rating: {{image.vote_average}}</p>
+                <p>Language: {{image.original_language | uppercase}}</p>
+                <p>Release Date: {{image.release_date | date:"MM-dd-yy"}}</p>
+                <p>Overwiew: {{image.overview}}</p>
+            </div>
+
+        </ng-template>
+    </ngb-carousel>
+</div>

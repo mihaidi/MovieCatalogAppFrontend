@@ -1,0 +1,34 @@
+<div class="container">
+   <br>
+    <div class="input-group mb-3 input1">
+        <input type="text" class="form-control " placeholder="Movie Name" aria-label="Movie Name"
+            aria-describedby="button-addon2" [formControl]="movieName">
+        <div class="input-group-append">
+            <button (click)="refreshPage()" class="btn btn-dark " type="button">Search</button>
+        </div>
+    </div>
+
+    <br>
+    <mat-grid-list cols="5" rowHeight="5:4">
+        <mat-grid-tile [colspan]=0.5 [rowspan]=1.5 *ngFor="let movie of movieArray">
+            <div>
+                <img src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" />
+                <p class="title">{{movie.title | slice:0:9}}...</p>
+                <ngb-rating [(rate)]=movie.vote_average></ngb-rating>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="button container">
+        <button (click)="previosPage()" *ngIf="pageNr > 1" class="btn btn-dark butspace">
+            Previos Page
+        </button>
+        <button (click)="nextPage()" class="btn btn-dark butspace">
+            Next Page
+        </button>
+    </div>
+</div>
